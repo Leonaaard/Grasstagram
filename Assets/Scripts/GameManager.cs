@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public float generationSpeed;
+    public float leafGenerationSpeed;
+    public float plantGenerationSpeed;
 
 	void Start () {
 		
