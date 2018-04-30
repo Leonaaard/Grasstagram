@@ -206,10 +206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 78e11f2b8e62d9148993efeb35d2d5d6, type: 2}
-  m_Camera: {fileID: 141678062}
-  m_PreviousProfile: {fileID: 11400000, guid: 78e11f2b8e62d9148993efeb35d2d5d6, type: 2}
-  m_RenderingInSceneView: 0
 --- !u!1 &564503379
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +469,7 @@ Prefab:
     - target: {fileID: 114435171132736656, guid: f41561ceb5d751d4fada55c3609ef29a,
         type: 2}
       propertyPath: grassSize
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114435171132736656, guid: f41561ceb5d751d4fada55c3609ef29a,
         type: 2}
@@ -488,7 +484,7 @@ Prefab:
     - target: {fileID: 114435171132736656, guid: f41561ceb5d751d4fada55c3609ef29a,
         type: 2}
       propertyPath: plantQuantity
-      value: 5000
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f41561ceb5d751d4fada55c3609ef29a, type: 2}
