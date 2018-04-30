@@ -12,7 +12,7 @@ public class GrassGeneration : MonoBehaviour {
     public float plantQuantity;
     public float grassSize;
 
-	IEnumerator Start () {
+	void Start () {
 
         // Référence au script GameManager
         GameObject gameManager = GameObject.FindWithTag("GameManager");
@@ -34,7 +34,7 @@ public class GrassGeneration : MonoBehaviour {
 
 
             // Délai d'apparition entre chaque feuille
-            yield return new WaitForSeconds(gameManagerScript.plantGenerationSpeed);
+            //yield return new WaitForSeconds(gameManagerScript.plantGenerationSpeed);
         }
 
     }

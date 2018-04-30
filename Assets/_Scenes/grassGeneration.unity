@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
@@ -331,7 +331,7 @@ Prefab:
     - target: {fileID: 114435171132736656, guid: f41561ceb5d751d4fada55c3609ef29a,
         type: 2}
       propertyPath: plantQuantity
-      value: 2000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 114435171132736656, guid: f41561ceb5d751d4fada55c3609ef29a,
         type: 2}
@@ -457,6 +457,16 @@ Prefab:
     - target: {fileID: 114435171132736656, guid: f41561ceb5d751d4fada55c3609ef29a,
         type: 2}
       propertyPath: grassSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114435171132736656, guid: f41561ceb5d751d4fada55c3609ef29a,
+        type: 2}
+      propertyPath: plantHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114435171132736656, guid: f41561ceb5d751d4fada55c3609ef29a,
+        type: 2}
+      propertyPath: plantHeightRandomisation
       value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []

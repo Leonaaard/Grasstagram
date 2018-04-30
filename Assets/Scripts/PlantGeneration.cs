@@ -6,7 +6,7 @@ public class PlantGeneration : MonoBehaviour {
 
     public GameObject leaf;
 
-	IEnumerator Start () {
+	void Start () {
 
         // Référence au script GameManager
         GameObject gameManager = GameObject.FindWithTag("GameManager");
@@ -49,7 +49,7 @@ public class PlantGeneration : MonoBehaviour {
             instanceLeaf.GetComponent<SpriteRenderer>().color = leafColor;
 
             // Délai d'apparition entre chaque feuille
-            yield return new WaitForSeconds(gameManagerScript.leafGenerationSpeed);
+            //yield return new WaitForSeconds(gameManagerScript.leafGenerationSpeed);
 
         }
 
