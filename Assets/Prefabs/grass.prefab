@@ -9,47 +9,50 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1897473958084374}
+  m_RootGameObject: {fileID: 1641101976287322}
   m_IsPrefabParent: 1
---- !u!1 &1897473958084374
+--- !u!1 &1641101976287322
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4596847343249638}
-  - component: {fileID: 114858025447695668}
+  - component: {fileID: 4728888016560476}
+  - component: {fileID: 114435171132736656}
   m_Layer: 0
-  m_Name: plant
+  m_Name: grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4596847343249638
+--- !u!4 &4728888016560476
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1897473958084374}
+  m_GameObject: {fileID: 1641101976287322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.76, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114858025447695668
+--- !u!114 &114435171132736656
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1897473958084374}
+  m_GameObject: {fileID: 1641101976287322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4baedd69b6b9b14bab87e926327b6cf, type: 3}
+  m_Script: {fileID: 11500000, guid: f772ddd6a8a6696449131447ea41ad62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leaf: {fileID: 1923367874282616, guid: f0cd7a4b6ba152a4bbc6a17f8abd4c80, type: 2}
-  plantHeight: 20
+  plant: {fileID: 1897473958084374, guid: 912b1cb4a5de66148b8c6cffc8fe6b39, type: 2}
+  plantHeight: 30
+  plantHeightRandomisation: 40
+  plantQuantity: 200
+  grassSize: 10
