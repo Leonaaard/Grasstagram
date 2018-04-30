@@ -16,7 +16,7 @@ public class PlantGeneration : MonoBehaviour {
         GrassGeneration parent = transform.GetComponentInParent<GrassGeneration>();
 
         // Taille de la plante aléatoire
-        float plantRandomHeight = parent.plantHeight + parent.plantHeightRandomisation;
+        float plantRandomHeight = parent.plantHeight + Random.Range(0, parent.plantHeightRandomisation);
 
         // Couleur de la plante aléatoire
         Color leafColor = new Color(0f, Random.Range(0.4f, 0.7f), Random.Range(0f, 0.3f), 1f);

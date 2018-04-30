@@ -457,17 +457,22 @@ Prefab:
     - target: {fileID: 114435171132736656, guid: f41561ceb5d751d4fada55c3609ef29a,
         type: 2}
       propertyPath: grassSize
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114435171132736656, guid: f41561ceb5d751d4fada55c3609ef29a,
         type: 2}
       propertyPath: plantHeight
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114435171132736656, guid: f41561ceb5d751d4fada55c3609ef29a,
         type: 2}
       propertyPath: plantHeightRandomisation
-      value: 20
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114435171132736656, guid: f41561ceb5d751d4fada55c3609ef29a,
+        type: 2}
+      propertyPath: plantQuantity
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f41561ceb5d751d4fada55c3609ef29a, type: 2}
