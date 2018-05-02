@@ -33,9 +33,9 @@ public class PlantGeneration : MonoBehaviour {
 
             // Réduction de la taille à chaque feuille
             Vector3 instanceSize = new Vector3(
-                1 - (i * 0.01f),
-                1 - (i * 0.01f),
-                1
+				parent.plantWidth,
+				parent.plantWidth,
+				1f
                 );
 
             // Création de la feuille

@@ -8,9 +8,10 @@ public class GrassGeneration : MonoBehaviour {
 
     public float plantHeight;
     public float plantHeightRandomisation;
+	public float plantWidth;
 
-    public float plantQuantity;
-    public float grassSize;
+    public float grassArea;
+	public float grassDensity;
 
 	void Start () {
 
@@ -18,14 +19,14 @@ public class GrassGeneration : MonoBehaviour {
         GameObject gameManager = GameObject.FindWithTag("GameManager");
         GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
 
-        for (int i = 0; i < plantQuantity; i++)
+		for (int i = 0; i < grassArea*grassDensity; i++)
         {
 
             // Position de la plante + surface de l'herbe
             Vector3 instancePosition = new Vector3(
-                transform.position.x + Random.Range(-grassSize, grassSize),
+				transform.position.x + Random.Range(-grassArea, grassArea),
                 transform.position.y,
-                transform.position.x + Random.Range(-grassSize, grassSize)
+				transform.position.x + Random.Range(-grassArea, grassArea)
             );
 
             // Création de la plante

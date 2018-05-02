@@ -52,7 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plant: {fileID: 1897473958084374, guid: 912b1cb4a5de66148b8c6cffc8fe6b39, type: 2}
-  plantHeight: 30
+  plantHeight: 1
   plantHeightRandomisation: 40
-  plantQuantity: 200
-  grassSize: 10
+  plantWidth: 0.5
+  plantQuantity: 100
+  grassSize: 5
