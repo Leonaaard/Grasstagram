@@ -15,6 +15,9 @@ public class PlantGeneration : MonoBehaviour {
         // Référence au script Parent
         GrassGeneration parent = transform.GetComponentInParent<GrassGeneration>();
 
+        // Orientation de la plante
+        float plantOrientation = Random.Range(0f, 180f);
+
         // Taille de la plante aléatoire
         float plantRandomHeight = parent.plantHeight + Random.Range(0, parent.plantHeightRandomisation);
 
@@ -39,7 +42,7 @@ public class PlantGeneration : MonoBehaviour {
                 );
 
             // Création de la feuille
-            GameObject instanceLeaf = Instantiate(leaf, instancePosition, Quaternion.Euler(-90,0,0));
+            GameObject instanceLeaf = Instantiate(leaf, instancePosition, Quaternion.Euler(-90,plantOrientation,0));
             instanceLeaf.transform.SetParent(transform);
 
             // Taille de la feuille
