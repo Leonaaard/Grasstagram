@@ -19,7 +19,7 @@ public class PlantGeneration : MonoBehaviour {
         float plantRandomHeight = parent.plantHeight + Random.Range(0, parent.plantHeightRandomisation);
 
         // Couleur de la plante aléatoire
-        Color leafColor = new Color(0f, Random.Range(0.4f, 0.7f), Random.Range(0f, 0.3f), 1f);
+        Color leafColor = new Color(0f, Random.Range(0.6f, 0.7f), Random.Range(0.2f, 0.3f), 1f);
 
         for (int i = 0; i < plantRandomHeight; i++)
         {
