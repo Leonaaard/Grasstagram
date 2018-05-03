@@ -56,4 +56,4 @@ MonoBehaviour:
   plantHeightRandomisation: 40
   plantWidth: 0.3
   grassArea: 20
-  grassDensity: 20
+  grassDensity: 100

@@ -42,7 +42,7 @@ public class PlantGeneration : MonoBehaviour {
                 );
 
             // Création de la feuille
-            GameObject instanceLeaf = Instantiate(leaf, instancePosition, Quaternion.Euler(-90,plantOrientation,0));
+            GameObject instanceLeaf = Instantiate(leaf, instancePosition, Quaternion.Euler(90,plantOrientation,0));
             instanceLeaf.transform.SetParent(transform);
 
             // Taille de la feuille
