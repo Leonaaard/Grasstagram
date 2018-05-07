@@ -33,7 +33,6 @@ public class GrassGeneration : MonoBehaviour {
             GameObject instancePlant = Instantiate(plant, instancePosition, Quaternion.identity);
             instancePlant.transform.SetParent(transform);
 
-
             // Délai d'apparition entre chaque feuille
             //yield return new WaitForSeconds(gameManagerScript.plantGenerationSpeed);
         }

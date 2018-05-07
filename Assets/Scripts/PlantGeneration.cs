@@ -42,14 +42,14 @@ public class PlantGeneration : MonoBehaviour {
                 );
 
             // Création de la feuille
-            GameObject instanceLeaf = Instantiate(leaf, instancePosition, Quaternion.Euler(90,plantOrientation,0));
-            instanceLeaf.transform.SetParent(transform);
+            GameObject instanceLeaf = Instantiate(leaf, instancePosition, Quaternion.Euler(0,plantOrientation,0));
+            //instanceLeaf.transform.SetParent(transform);
 
             // Taille de la feuille
             instanceLeaf.transform.localScale = instanceSize;
 
             // Colorisation de la feuille
-            instanceLeaf.GetComponent<SpriteRenderer>().color = leafColor;
+            //instanceLeaf.GetComponent<SpriteRenderer>().color = leafColor;
 
             // Délai d'apparition entre chaque feuille
             //yield return new WaitForSeconds(gameManagerScript.leafGenerationSpeed);

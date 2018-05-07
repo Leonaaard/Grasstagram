@@ -9,6 +9,7 @@ public class FlowerGeneration : MonoBehaviour {
     void Start()
     {
 
+
         // Référence au script GameManager
         GameObject gameManager = GameObject.FindWithTag("GameManager");
         GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
