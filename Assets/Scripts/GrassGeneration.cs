@@ -15,10 +15,6 @@ public class GrassGeneration : MonoBehaviour {
 
 	void Start () {
 
-        // Référence au script GameManager
-        GameObject gameManager = GameObject.FindWithTag("GameManager");
-        GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
-
 		for (int i = 0; i < grassArea*grassDensity; i++)
         {
 
@@ -32,9 +28,7 @@ public class GrassGeneration : MonoBehaviour {
             // Création de la plante
             GameObject instancePlant = Instantiate(plant, instancePosition, Quaternion.identity);
             instancePlant.transform.SetParent(transform);
-
-            // Délai d'apparition entre chaque feuille
-            //yield return new WaitForSeconds(gameManagerScript.plantGenerationSpeed);
+            
         }
 
     }

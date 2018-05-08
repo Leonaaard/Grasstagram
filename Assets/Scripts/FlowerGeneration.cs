@@ -9,11 +9,6 @@ public class FlowerGeneration : MonoBehaviour {
     void Start()
     {
 
-
-        // Référence au script GameManager
-        GameObject gameManager = GameObject.FindWithTag("GameManager");
-        GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
-
         // Référence au script Parent
         GrassGeneration parent = transform.GetComponentInParent<GrassGeneration>();
 
@@ -36,7 +31,7 @@ public class FlowerGeneration : MonoBehaviour {
                 // Décalage vertical entre chaque feuille
                 Vector3 instancePosition = new Vector3(
                     transform.position.x,
-                    transform.position.y + (i * 0.07f) + 0.01f,
+                    transform.position.y + (i * 0.05f) + 0.01f,
                     transform.position.z
                     );
 

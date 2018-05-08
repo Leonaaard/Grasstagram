@@ -8,10 +8,6 @@ public class PlantGeneration : MonoBehaviour {
 
 	void Start () {
 
-        // Référence au script GameManager
-        GameObject gameManager = GameObject.FindWithTag("GameManager");
-        GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
-
         // Référence au script Parent
         GrassGeneration parent = transform.GetComponentInParent<GrassGeneration>();
 
@@ -30,29 +26,26 @@ public class PlantGeneration : MonoBehaviour {
             // Décalage vertical entre chaque feuille
             Vector3 instancePosition = new Vector3(
                 transform.position.x,
-                transform.position.y + (i*  0.07f) + 0.01f,
+                transform.position.y + (i*  0.05f) + 0.01f,
                 transform.position.z
                 );
 
             // Réduction de la taille à chaque feuille
             Vector3 instanceSize = new Vector3(
 				parent.plantWidth,
-				1f,
-                parent.plantWidth
+                parent.plantWidth,
+                1f
                 );
 
             // Création de la feuille
-            GameObject instanceLeaf = Instantiate(leaf, instancePosition, Quaternion.Euler(0,plantOrientation,0));
-            //instanceLeaf.transform.SetParent(transform);
+            GameObject instanceLeaf = Instantiate(leaf, instancePosition, Quaternion.Euler(90,plantOrientation,0));
+            instanceLeaf.transform.SetParent(transform);
 
             // Taille de la feuille
             instanceLeaf.transform.localScale = instanceSize;
 
             // Colorisation de la feuille
-            //instanceLeaf.GetComponent<SpriteRenderer>().color = leafColor;
-
-            // Délai d'apparition entre chaque feuille
-            //yield return new WaitForSeconds(gameManagerScript.leafGenerationSpeed);
+            instanceLeaf.GetComponent<SpriteRenderer>().color = leafColor;
 
         }
 
