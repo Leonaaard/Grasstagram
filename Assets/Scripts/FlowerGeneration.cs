@@ -59,7 +59,7 @@ public class FlowerGeneration : MonoBehaviour {
                 // Décalage vertical entre chaque feuille
                 Vector3 instancePosition = new Vector3(
                     transform.position.x,
-                    transform.position.y + (i * 0.07f) + 0.01f,
+                    transform.position.y + (i * 0.05f) + 0.01f,
                     transform.position.z
                     );
 
