@@ -4,21 +4,38 @@ using UnityEngine;
 
 public class GrassGenerationV2 : MonoBehaviour {
 
+    [Header("Général")]
+    public float fieldArea;
+
+    [Header("Grass")]
     public GameObject grass;
-
     public int grassCount;
-    public float grassArea;
 
-	void Start () {
-		
+    [Header("Bush")]
+    public GameObject bush;
+    public int bushCount;
+
+    [Header("Wheat")]
+    public GameObject wheat;
+    public int wheatCount;
+
+    void Start () {
+
+        GrassGeneration();
+        BushGeneration();
+        WheatGeneration();
+
+	}
+	
+	void GrassGeneration () {
         for (int i = 0; i < grassCount; i++)
         {
 
             // Random Position   
             Vector3 instancePosition = new Vector3(
-                transform.position.x + Random.Range(-grassArea, grassArea),
+                transform.position.x + Random.Range(-fieldArea, fieldArea),
                 transform.position.y,
-                transform.position.z + Random.Range(-grassArea, grassArea)
+                transform.position.z + Random.Range(-fieldArea, fieldArea)
             );
 
             // Création de la plante + parent
@@ -39,10 +56,66 @@ public class GrassGenerationV2 : MonoBehaviour {
             instanceGrass.GetComponentInChildren<SpriteRenderer>().color = grassColor;
 
         }
+    }
 
-	}
-	
-	void Update () {
-		
-	}
+    void BushGeneration()
+    {
+        for (int i = 0; i < bushCount; i++)
+        {
+
+            // Random Position   
+            Vector3 instancePosition = new Vector3(
+                transform.position.x + Random.Range(-fieldArea, fieldArea),
+                transform.position.y,
+                transform.position.z + Random.Range(-fieldArea, fieldArea)
+            );
+
+            // Création de la plante + parent
+            GameObject instanceBush = Instantiate(bush, instancePosition, Quaternion.identity);
+            instanceBush.transform.SetParent(transform);
+
+            // Random Size
+            float instanceSizeX = Random.Range(0.5f, 1.2f);
+            Vector3 instanceSize = new Vector3(
+                instanceSizeX,
+                instanceSizeX,
+                instanceSizeX
+            );
+            instanceBush.transform.localScale = instanceSize;
+
+            // RandomColor
+            SpriteRenderer[] sprites = instanceBush.GetComponentsInChildren<SpriteRenderer>();
+
+            for (int j = 0; j < sprites.Length; j++)
+            {
+                Color bushColor = new Color(0f, Random.Range(0.55f, 0.6f), 0.1f, 1f);
+                sprites[j].color = bushColor;
+            }
+
+        }
+    }
+
+    void WheatGeneration()
+    {
+        for (int i = 0; i < wheatCount; i++)
+        {
+
+            // Random Position + Size
+            Vector3 instancePosition = new Vector3(
+                transform.position.x + Random.Range(-fieldArea, fieldArea),
+                transform.position.y + Random.Range(-1,1),
+                transform.position.z + Random.Range(-fieldArea, fieldArea)
+            );
+
+            // Création de la plante + parent
+            GameObject instanceWheat = Instantiate(wheat, instancePosition, Quaternion.identity);
+            instanceWheat.transform.SetParent(transform);
+
+            // RandomColor
+            Color wheatColor = new Color(Random.Range(0.9f, 1f), Random.Range(0.9f, 1f), Random.Range(0.9f, 1f), 1f);
+            instanceWheat.GetComponentInChildren<SpriteRenderer>().color = wheatColor;
+
+        }
+    }
+
 }

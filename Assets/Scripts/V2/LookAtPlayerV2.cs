@@ -11,6 +11,11 @@ public class LookAtPlayerV2 : MonoBehaviour {
     }
 	
 	void Update () {
-        transform.LookAt(player.transform);
+        Vector3 target = new Vector3(
+            player.transform.position.x,
+            transform.position.y,
+            player.transform.position.z
+        );
+        transform.LookAt(target);
     }
 }
