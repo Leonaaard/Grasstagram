@@ -6,10 +6,27 @@ public class PlayerLook : MonoBehaviour {
 
 	public Transform playerBody;
 	public float mouseSensitivity;
+	private float xAxisClamp = 0.0f;
 
-	float xAxisClamp = 0.0f;
+    // Zoom
+    private Camera myCamera;
+    public float zoomSpeed;
 
-	void Awake(){
+    // Sounds
+    private AudioSource[] sounds;
+    private AudioSource zoomSFX;
+
+    private void Start()
+    {
+
+        myCamera = GetComponent<Camera>();
+
+        sounds = GetComponents<AudioSource>();
+        zoomSFX = sounds[1];
+
+    }
+
+    void Awake(){
 
 		Cursor.lockState = CursorLockMode.Locked;
 
@@ -18,6 +35,7 @@ public class PlayerLook : MonoBehaviour {
 	void Update() {
 		
 		RotateCamera ();
+        ZoomInOut();
 
 	}
 
@@ -50,5 +68,40 @@ public class PlayerLook : MonoBehaviour {
 		playerBody.rotation = Quaternion.Euler(targetRotBody);
 
 	}
+
+    void ZoomInOut()
+    {
+
+        if (Input.GetButton("ZoomIn"))
+        {
+            myCamera.fieldOfView -= Mathf.Lerp(0, zoomSpeed, Time.deltaTime*10f);
+            if (!zoomSFX.isPlaying)
+            {
+                zoomSFX.pitch = 1.05f;
+                zoomSFX.Play();
+            }
+        }
+        else if(!Input.GetButton("ZoomOut"))
+        {
+            zoomSFX.Stop();
+
+        }
+        if (Input.GetButton("ZoomOut"))
+        {
+            myCamera.fieldOfView += Mathf.Lerp(0, zoomSpeed, Time.deltaTime * 10f);
+            if (!zoomSFX.isPlaying)
+            {
+                zoomSFX.pitch = 1f;
+                zoomSFX.Play();
+            }
+        }
+        else if (!Input.GetButton("ZoomIn"))
+        {
+            zoomSFX.Stop();
+
+        }
+        myCamera.fieldOfView = Mathf.Clamp(myCamera.fieldOfView, 20, 60);
+
+    }
 
 }
