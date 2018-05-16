@@ -11,6 +11,8 @@ public class PlayerLook : MonoBehaviour {
     // Zoom
     private Camera myCamera;
     public float zoomSpeed;
+    public float minFOV;
+    public float maxFOV;
 
     // Sounds
     private AudioSource[] sounds;
@@ -28,7 +30,7 @@ public class PlayerLook : MonoBehaviour {
 
     void Awake(){
 
-		Cursor.lockState = CursorLockMode.Locked;
+		//Cursor.lockState = CursorLockMode.Locked;
 
 	}
 
@@ -72,7 +74,7 @@ public class PlayerLook : MonoBehaviour {
     void ZoomInOut()
     {
 
-        if (Input.GetButton("ZoomIn"))
+        if (Input.GetButton("ZoomIn") && myCamera.fieldOfView > minFOV)
         {
             myCamera.fieldOfView -= Mathf.Lerp(0, zoomSpeed, Time.deltaTime*10f);
             if (!zoomSFX.isPlaying)
@@ -84,12 +86,11 @@ public class PlayerLook : MonoBehaviour {
         else if(!Input.GetButton("ZoomOut"))
         {
             zoomSFX.Stop();
-
         }
-        if (Input.GetButton("ZoomOut"))
+        if (Input.GetButton("ZoomOut") && myCamera.fieldOfView < maxFOV)
         {
             myCamera.fieldOfView += Mathf.Lerp(0, zoomSpeed, Time.deltaTime * 10f);
-            if (!zoomSFX.isPlaying)
+            if (!zoomSFX.isPlaying &&myCamera.fieldOfView < maxFOV)
             {
                 zoomSFX.pitch = 1f;
                 zoomSFX.Play();
@@ -98,9 +99,8 @@ public class PlayerLook : MonoBehaviour {
         else if (!Input.GetButton("ZoomIn"))
         {
             zoomSFX.Stop();
-
         }
-        myCamera.fieldOfView = Mathf.Clamp(myCamera.fieldOfView, 20, 60);
+        myCamera.fieldOfView = Mathf.Clamp(myCamera.fieldOfView, minFOV, maxFOV);
 
     }
 

@@ -551,7 +551,7 @@ AudioSource:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -581,7 +581,7 @@ AudioSource:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!82 &82419358957375588
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1071,6 +1071,8 @@ MonoBehaviour:
   playerBody: {fileID: 4822599911790400}
   mouseSensitivity: 1
   zoomSpeed: 5
+  minFOV: 10
+  maxFOV: 60
 --- !u!114 &114503175147938730
 MonoBehaviour:
   m_ObjectHideFlags: 1
