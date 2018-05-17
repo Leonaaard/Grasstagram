@@ -114,7 +114,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 20756e7054119504b939d98240751475, type: 2}
   m_StaticBatchInfo:
@@ -168,9 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b32560eb8979674bab6cadaeac27ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldArea: 40
+  fieldArea: 200
   grass: {fileID: 1584587460673694, guid: 86f76559fbb94044c8216e9f2d200b27, type: 2}
-  grassCount: 10000
+  grassCount: 1000
   bush: {fileID: 1836098369485886, guid: 8994a8b8ab9363e4086e5e097a4dbc3f, type: 2}
   bushCount: 4
   wheat: {fileID: 1919472996673636, guid: aa0c01bc44ceee2409273c0db986f364, type: 2}
