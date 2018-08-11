@@ -30,7 +30,7 @@ public class PlayerLook : MonoBehaviour {
 
     void Awake(){
 
-		//Cursor.lockState = CursorLockMode.Locked;
+		Cursor.lockState = CursorLockMode.Locked;
 
 	}
 
